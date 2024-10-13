@@ -6,7 +6,7 @@
     "url": "https://github.com/qbittorrent/qBittorrent-website.git"
   },
   "scripts": {
-    "build": "eleventy",
+    "build": "eleventy && cd atom_generator && deno run generate -i ../_site/news.html -o ../_site/news_feed.atom",
     "check-html": "html-validate _site/*.html",
     "format": "js-beautify -r src/**.js && prettier --write **.css",
     "lint": "eslint src/scripts/**.js && stylelint **/*.css",
